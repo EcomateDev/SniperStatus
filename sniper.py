@@ -8,12 +8,14 @@ TOKEN = 'token-here ><'
 bot = commands.Bot(command_prefix='/', intents=disnake.Intents.default())
 
 async def change_status():
-    while True:
         await bot.change_presence(activity=disnake.Game(name='[+] SNIPERSTATUS 🛠️'))
         time.sleep(10)
         while True:
           await bot.change_presence(activity=disnake.Game(name=' '))
-          time.sleep(0.1)
+          time.sleep(0.3)
+          await bot.change_presence(activity=disnake.Game(name='  '))
+          time.sleep(0.3)
+          await bot.change_presence(activity=disnake.Game(name='   '))
 
 @bot.event
 async def on_ready():
